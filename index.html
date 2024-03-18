@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>whoops kiri whoops</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+   
+    <style>
+        body {
+    background-image: url('images/bg.jpg');            
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover; /* Set background size to auto */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+}
+        .carousel-item {
+            text-align: center;
+            position: relative;
+            
+        }
+        .carousel-item img {
+    height: 350px; /* Fixed height */
+    width: 100%; /* Allow width to adjust based on height */
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+              border-radius: 50px;
+    border: 2px solid white;
+    margin-top: 50px;
+        }
+
+        .product-description {
+            display: none; /* Hide the product description */
+        }
+        footer {           
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+           
+        }
+        footer a {          
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .coffee-categories {
+            text-align: center;
+            margin-top: 20px;
+            border: 2px solid #ccc; /* Add border */
+            padding: 10px; /* Add padding */
+        }
+        .coffee-categories h4 {
+            margin-bottom: 10px;
+        }
+        .coffee-categories ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .coffee-categories ul li {
+            display: inline-block;
+            margin-right: 10px;
+            justify-content: space-between;
+        }
+        .search-container {
+            position: absolute;
+            right: 40px;
+            top: 80px;           
+            z-index: 1;
+            display: flex; /* Added to make the elements align horizontally */
+            align-items: center; /* Center align items vertically */
+        }
+        .search-input {
+            margin-right: -45px;
+            width: 200px; /* Adjust width as needed */
+            background-color: white; /* Make the input transparent */
+            border-radius: 20px;
+        }
+        .search-button {
+            background-color: #CBB89D;
+            z-index: 1;
+            width: auto; /* Extend the button to the left */
+            border-radius: 100vh;
+            
+        }
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            height: 40px; /* Adjust height as needed */
+            width: 40px; /* Adjust width as needed */
+            margin-right: 10px; /* Added margin to the right */
+            cursor: pointer;         
+            border-radius: 100%;
+            object-fit: cover; /* Ensure the image fits within dimensions */
+        }
+        .foot {  
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 2px solid black;      
+            border-radius: 100px;
+            margin-bottom: 15px;
+            height: 40px; /* Set the same height as the footer images */
+            width: auto; /* Allow width to adjust based on height */
+        }
+        .additional-images {   
+    display: flex;
+    justify-content: space-evenly; /* Center items horizontally */
+    align-item: center;
+    margin-top: 130px; /* Add margin to the top to move the images down */
+    margin-left: 15px;  
+    margin-right: 15px;   
+    height: auto;          
+    }
+.additional-images img {
+    margin-top: 8px;
+    max-width: 100%; /* Ensure images dont exceed container width */
+    margin-bottom: 10px; /* Add some space between images */
+    height: 60px;
+    width: 60px
+    
+}
+  .cat {
+    border: 3px solid white;
+    border-radius: 100%; /* Add border radius to images */
+    border-bottom-right-radius: 120px;
+    border-bottom-left-radius: 120px;   
+  }
+  .text-color {
+    background-color: white;
+    color: black;
+    
+  }
+  .oswald-font {
+  background-color: white;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+    
+  font-style: normal;
+    border-radius: 10px;
+}
+  .mylogo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    display: flex;
+  }
+  .bj {
+    height: 50px; /* Adjust height as needed */
+    width: 90px; /* Adjust width as needed */
+    margin-right: 10px; /* Added margin to the right */
+    cursor: pointer;  
+    border-radius: 100px;    
+    object-fit: cover; /* Ensure the image fits within dimensions */
+  }
+   
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <!-- Additional images section -->
+        <div class="additional-images">
+          <a href="espresso.html">
+            <div><img src="images/ristretto.jpg" alt="Additional Image 1" class="cat"></div>
+            <div class="oswald-font">Espresso</div>
+          </a>   
+          <a href="cappuccino.html">
+            <div><img src="images/cara.jpg" alt="Additional Image 2" class="cat"></div>
+            <div class="oswald-font">Capuccino</div>
+          </a>          
+          <a href="latte.html">
+            <div><img src="images/hazelnut.jpg" alt="Additional Image 3" class="cat"></div>
+            <div class="oswald-font">Latte</div>
+          </a>
+          <a href="americano.html">
+            <div><img src="images/iced.jpg" alt="Additional Image 4" class="cat"></div>
+            <div class="oswald-font">Americano</div>
+          </a>
+    </div>
+        
+        <a>
+            <div id="featured-products-carousel" class="carousel slide" data-ride="carousel" data-interval="1000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/iced.jpg" class="d-block">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/black.jpg" class="d-block">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/vann.jpg" class="d-block">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/cara.jpg" class="d-block">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/ristretto.jpg" class="d-block">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/mocha.jpg" class="d-block">
+                    </div>
+                    <!-- Add more carousel items as needed -->
+                </div>
+                <a class="carousel-control-prev" href="#featured-products-carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#featured-products-carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="form-control search-input" placeholder="Search coffee.">
+                <button class="btn btn-primary search-button" style="font-size: 14px;">🔍</button>
+            </div>
+            <div class="logo-container">
+                <a href="login.html"><img src="images/login.jpg" alt="Logo" class="logo"></a>
+                <!-- You can add text or additional elements here if needed -->
+            </div>
+          <div class="mylogo">
+                <a href="login.html"><img src="images/bj.png" alt="Logo" class="bj"></a>
+                <!-- You can add text or additional elements here if needed -->
+            </div>
+        </a>
+    </div>
+  
+    <footer style="margin-top: auto; display: flex; justify-content: space-evenly;">
+        <a href="index.html" style="margin-left: 10px;"><img src="images/home.png" alt="Home" style="height: 60px;" class="foot"></a>
+        <a href="product.html"><img src="images/products.png" alt="Products" style="height: 60px;" class="foot"></a>
+        <a href="cart.html"><img src="images/cart.png" alt="Cart" style="height: 60px; width: auto;" class="foot"></a>
+        <a href="contact.html" style="margin-right: 10px;"><img src="images/contacts.png" alt="Contacts" style="height: 60px;" class="foot"></a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

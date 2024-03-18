@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple HTML Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        footer {
+            background-color: #CBB89D;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            border: 2px solid white;
+        }
+        footer a {
+          
+          text-decoration: none;
+          margin: 0 10px;
+        }
+        .coffee-categories {
+          background-color: #CBB89D;         
+          position: fixed;
+          text-align: center;
+          width: 100%;
+          border: 2px solid white; /* Add border */
+          padding: 10px; /* Add padding */
+        }
+        .coffee-categories h4 {
+          margin-bottom: 10px;
+        }
+        .coffee-categories ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .coffee-categories ul li {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        .espresso-products {
+          text-align: center;
+          margin-left: 2px;
+          margin-top: 100px;
+          margin-bottom: 90px; /* Add extra bottom margin */
+        }
+        .espresso-products h4 {
+          margin-bottom: 30px;
+        }
+        .espresso-products .product {
+          display: inline-block;
+          margin: 4px 2px 2px 2px; /* Add margin with 5px */
+        }
+        .espresso-products .product-container {
+          background-color: white; /* Add white background */
+          padding: 15px; /* Add padding */
+          border-radius: 5px; /* Add border radius */
+        }
+        .espresso-products .product img {
+          height: 200px; /* Equal height for all images */
+          width: 150px; /* Equal width for all images */
+          object-fit: cover; /* Ensure images maintain aspect ratio and cover the container */
+        }
+        .product-container {
+          background-color: white;
+          padding: 15px;
+          border-radius: 5px;
+          text-align: left; /* Align text to the left */
+        }
+        .product-container p {
+          margin: 5px 0; /* Adjust the margin to reduce space */
+        }
+        .foot {
+          background-color: rgba(255, 255, 255, 0.6);
+          border: 2px solid black;
+          border-radius: 100px;
+          margin-bottom: 15px;
+          margin-top: 10px;
+        }
+        .modal-body img {
+          height: 90px;
+          width: 90px;
+          border-radius: 10px;
+        }
+        .modal-body button {
+          background-color: #E7DCC8;
+          border-radius: 5px;
+          margin-left: 70%;
+        }
+        .price {
+          margin-top: -15px;
+        }
+  .oswald-font {
+  background-color: white;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+    border-radius: 15px;
+}
+  .color {
+    color: #412F26;
+  }
+    </style>
+</head>
+<body style="background-color: #806044;">
+  
+    <div class="coffee-categories">
+        <h4 class="oswald-font">Categories</h4>
+        <ul>
+            <li><a href="espresso.html" class="color">Espresso</a></li>
+            <li><a href="cappuccino.html" class="color">Cappuccino</a></li>
+            <li><a href="latte.html" class="color">Latte</a></li>
+            <li><a style="color: #6A6F4C;">Americano</a></li>
+        </ul>
+    </div>
+
+    <div class="espresso-products">
+        
+        <div class="product" data-toggle="modal" data-target="#productModal19">
+            <div class="product-container">
+                <img src="images/traditional.jpg" alt="Espresso 1" width="150" height="200">
+                <p class="oswald-font">Traditional Americano</p>
+                <p>₱275</p>
+            </div>
+        </div>
+        <div class="product" data-toggle="modal" data-target="#productModal20">
+            <div class="product-container">
+                <img src="images/iceam.jpg" alt="Espresso 2" width="150" height="200">
+                <p class="oswald-font">Iced Americano</p>
+                <p>₱275</p>
+            </div>
+        </div>
+      
+        <div class="modal fade" id="productModal19" tabindex="-1" role="dialog" aria-labelledby="productModalLabel19" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel19">Traditional Americano</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/traditional.jpg" alt="Espresso 1" width="150" height="200">
+                    <p class="oswald-font">Traditional Americano</p>
+                    <p class="price">₱275</p> 
+                  <p class="des">
+                    Enjoy the timeless simplicity of our traditional Americano—a rich and robust espresso, diluted with hot water to create a smooth yet bold coffee experience. Embrace the pure essence of espresso with this classic favorite, perfect for those who appreciate the true character of coffee.
+                  </p>
+                    <button onclick="addToCart('Traditional Americano', 275, 'images/traditional.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal20" tabindex="-1" role="dialog" aria-labelledby="productModalLabel20" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel20">Iced Americano</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/iceam.jpg" alt="Espresso 2" width="150" height="200">
+                    <p class="oswald-font">Iced Americano</p>
+                    <p class="price">₱275</p> 
+                  <p class="des">
+                    Stay refreshed with our invigorating iced Americano—a crisp and smooth blend of bold espresso and chilled water, served over ice for a refreshing pick-me-up. Experience the pure essence of coffee in every cool and revitalizing sip, perfect for hot summer days or whenever you need a refreshing caffeine boost.
+                  </p>
+                    <button onclick="addToCart('Iced Americano', 275, 'images/iceam.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <footer style="margin-top: auto; display: flex; justify-content: space-evenly;">
+        <a href="index.html" style="margin-left: 10px;"><img src="images/home.png" alt="Home" style="height: 60px;" class="foot"></a>
+        <a href="product.html"><img src="images/products.png" alt="Products" style="height: 60px;" class="foot"></a>
+        <a href="cart.html"><img src="images/cart.png" alt="Cart" style="height: 60px; width: auto;" class="foot"></a>
+        <a href="contact.html" style="margin-right: 10px;"><img src="images/contacts.png" alt="Contacts" style="height: 60px;" class="foot"></a>
+    </footer>
+      
+    <script>
+    function addToCart(name, price, imageUrl) {
+        const item = {
+            name: name,
+            price: price,
+            imageUrl: imageUrl
+        };
+
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.push(item);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+
+        alert('Item added to cart!');
+    }
+</script>
+  
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      
+    </body>
+</html>

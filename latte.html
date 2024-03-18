@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Simple HTML Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        footer {
+            background-color: #CBB89D;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            border: 2px solid white;
+        }
+        footer a {
+          
+          text-decoration: none;
+          margin: 0 10px;
+        }
+        .coffee-categories {
+          background-color: #CBB89D;         
+          position: fixed;
+          text-align: center;
+          width: 100%;
+          border: 2px solid white; /* Add border */
+          padding: 10px; /* Add padding */
+        }
+        .coffee-categories h4 {
+          margin-bottom: 10px;
+        }
+        .coffee-categories ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .coffee-categories ul li {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        .espresso-products {
+          text-align: center;
+          margin-left: 2px;
+          margin-top: 100px;
+          margin-bottom: 90px; /* Add extra bottom margin */
+        }
+        .espresso-products h4 {
+          margin-bottom: 30px;
+        }
+        .espresso-products .product {
+          display: inline-block;
+          margin: 4px 2px 2px 2px; /* Add margin with 5px */
+        }
+        .espresso-products .product-container {
+          background-color: white; /* Add white background */
+          padding: 15px; /* Add padding */
+          border-radius: 5px; /* Add border radius */
+        }
+        .espresso-products .product img {
+          height: 200px; /* Equal height for all images */
+          width: 150px; /* Equal width for all images */
+          object-fit: cover; /* Ensure images maintain aspect ratio and cover the container */
+        }
+        .product-container {
+          background-color: white;
+          padding: 15px;
+          border-radius: 5px;
+          text-align: left; /* Align text to the left */
+        }
+        .product-container p {
+          margin: 5px 0; /* Adjust the margin to reduce space */
+        }
+        .foot {
+          background-color: rgba(255, 255, 255, 0.6);
+          border: 2px solid black;
+          border-radius: 100px;
+          margin-bottom: 15px;
+          margin-top: 10px;
+        }
+        .modal-body img {
+          height: 90px;
+          width: 90px;
+          border-radius: 10px;
+        }
+        .modal-body button {
+          background-color: #E7DCC8;
+          border-radius: 5px;
+          margin-left: 70%;
+        }
+        .price {
+          margin-top: -15px;
+        }
+        .oswald-font {
+  background-color: white;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+          border-radius: 15px;
+}
+  .color {
+    color: #412F26;
+  }
+    </style>
+</head>
+<body style="background-color: #806044;">
+  
+    <div class="coffee-categories">
+        <h4 class="oswald-font">Categories</h4>
+        <ul>
+            <li><a href="espresso.html" class="color">Espresso</a></li>
+            <li><a href="cappuccino.html" class="color">Cappuccino</a></li>
+            <li><a style="color: #6A6F4C;">Latte</a></li>
+            <li><a href="americano.html" class="color">Americano</a></li>
+        </ul>
+    </div>
+
+    <div class="espresso-products">
+       
+        <div class="product" data-toggle="modal" data-target="#productModal13">
+            <div class="product-container">
+                <img src="images/caramel.jpg" alt="Espresso 1" width="150" height="200">
+                <p class="oswald-font">Caramel Latte</p>
+                <p>₱275</p>
+            </div>
+        </div>
+        <div class="product" data-toggle="modal" data-target="#productModal14">
+            <div class="product-container">
+                <img src="images/pumpkin.jpg" alt="Espresso 2" width="150" height="200">
+                <p class="oswald-font">Pumpkin Spice Latte</p>
+                <p>₱275</p>
+            </div>
+        </div>
+        <div class="product" data-toggle="modal" data-target="#productModal15">
+            <div class="product-container">
+                <img src="images/cinnamon.jpg" alt="Espresso 3" width="150" height="200">
+                <p class="oswald-font">Cinnamon Latte</p>
+                <p>₱275</p>
+            </div>
+        </div>
+        <div class="product" data-toggle="modal" data-target="#productModal16">
+            <div class="product-container">
+                <img src="images/moch.jpg" alt="Espresso 3" width="150" height="200">
+                <p class="oswald-font">Mocha Latte</p>
+                <p>₱275</p>
+            </div>
+        </div>
+        <div class="product" data-toggle="modal" data-target="#productModal17">
+            <div class="product-container">
+                <img src="images/hazelnut.jpg" alt="Espresso 3" width="150" height="200">
+                <p class="oswald-font">Hazelnut Latte</p>
+                <p>₱275</p>
+            </div>
+        </div>
+        <div class="product" data-toggle="modal" data-target="#productModal18">
+            <div class="product-container">
+                <img src="images/vanilla.jpg" alt="Espresso 3" width="150" height="200">
+                <p class="oswald-font">Vanilla Latte</p>
+                <p>₱275</p>
+            </div>
+        </div>
+    
+    
+    <div class="modal fade" id="productModal13" tabindex="-1" role="dialog" aria-labelledby="productModalLabel13" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel13">Caramel Latte</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/caramel.jpg" alt="Espresso 1" width="150" height="200">
+                    <p class="oswald-font">Caramel Latte</p>
+                    <p class="price">₱275</p> 
+                  <p class="des">
+                    Indulge in the irresistible sweetness of our caramel latte—a decadent blend of rich espresso, creamy milk, and velvety caramel syrup, perfectly crafted to satisfy your sweet cravings and elevate your coffee experience. Treat yourself to a moment of pure indulgence with every luxurious sip of this delightful beverage.
+                  </p>
+                    <button onclick="addToCart('Caramel Latte', 275, 'images/caramel.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal14" tabindex="-1" role="dialog" aria-labelledby="productModalLabel14" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel14">Pumpkin Spice Latte</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/pumpkin.jpg" alt="Espresso 2" width="150" height="200">
+                    <p class="oswald-font">Pumpkin Spice Latte</p>
+                    <p class="price">₱275</p> 
+                   <p class="des">
+                    Savor the cozy flavors of fall with our pumpkin spice latte—a delicious blend of espresso, steamed milk, and aromatic pumpkin spice syrup, topped with a swirl of whipped cream and a sprinkle of cinnamon. Experience the perfect balance of warmth and sweetness in every sip of this seasonal favorite, crafted to delight your senses and brighten your day.
+                  </p>
+                    <button onclick="addToCart('Pumpkin Spice Latte', 275, 'images/pumpkin.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal15" tabindex="-1" role="dialog" aria-labelledby="productModalLabel15" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel15">Cinnamon Latte</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/cinnamon.jpg" alt="Espresso 3" width="150" height="200">
+                    <p class="oswald-font">Cinnamon Latte</p>
+                    <p class="price">₱275</p> 
+                  <p class="des">
+                    Warm up your day with our comforting cinnamon latte—a delightful blend of bold espresso, creamy milk, and a touch of aromatic cinnamon syrup. Experience the cozy embrace of this sweet and spicy combination, perfect for adding a touch of warmth and indulgence to your coffee break.
+                  </p>
+                    <button onclick="addToCart('Cinnamon Latte', 275, 'images/cinnamon.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal16" tabindex="-1" role="dialog" aria-labelledby="productModalLabel16" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel16">Mocha Latte</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/moch.jpg" alt="Espresso 3" width="150" height="200">
+                    <p class="oswald-font">Mocha Latte</p>
+                    <p class="price">₱275</p>
+                  <p class="des">
+                    Indulge in the luxurious harmony of rich espresso, creamy milk, and decadent chocolate with our irresistible mocha latte. Satisfy your sweet cravings and elevate your coffee experience with every velvety sip of this deliciously indulgent beverage.
+                  </p>
+                    <button onclick="addToCart('Mocha Latte', 275, 'images/moch.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal17" tabindex="-1" role="dialog" aria-labelledby="productModalLabel17" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel17">Hazelnut</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/hazelnut.jpg" alt="Espresso 3" width="150" height="200">
+                    <p class="oswald-font">Hazelnut Latte</p>
+                    <p class="price">₱275</p> 
+                  <p class="des">
+                    Savor the delightful fusion of bold espresso, creamy milk, and nutty hazelnut syrup in our irresistible hazelnut latte. Experience the perfect balance of richness and sweetness, crafted to indulge your senses and elevate your coffee ritual to new heights.
+                  </p>
+                    <button onclick="addToCart('Hazelnut Latte', 275, 'images/hazelnut.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal18" tabindex="-1" role="dialog" aria-labelledby="productModalLabel18" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel18">Vanilla Latte</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/vanilla.jpg" alt="Espresso 3" width="150" height="200">
+                    <p class="oswald-font">Vanilla Latte</p>
+                    <p class="price">₱275</p>
+                  <p class="des">
+                    Experience the creamy indulgence of our vanilla latte—a harmonious blend of bold espresso, silky milk, and fragrant vanilla syrup. Satisfy your sweet cravings and delight your senses with every luxurious sip of this classic favorite.
+                  </p>
+                    <button onclick="addToCart('Vanilla Latte', 275, 'images/vanilla.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <footer style="margin-top: auto; display: flex; justify-content: space-evenly;">
+        <a href="index.html" style="margin-left: 10px;"><img src="images/home.png" alt="Home" style="height: 60px;" class="foot"></a>
+        <a href="product.html"><img src="images/products.png" alt="Products" style="height: 60px;" class="foot"></a>
+        <a href="cart.html"><img src="images/cart.png" alt="Cart" style="height: 60px; width: auto;" class="foot"></a>
+        <a href="contact.html" style="margin-right: 10px;"><img src="images/contacts.png" alt="Contacts" style="height: 60px;" class="foot"></a>
+    </footer>
+  
+  <script>
+    function addToCart(name, price, imageUrl) {
+        const item = {
+            name: name,
+            price: price,
+            imageUrl: imageUrl
+        };
+
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.push(item);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+
+        alert('Item added to cart!');
+    }
+</script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple HTML Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            background-color: #816246;
+            padding-bottom: 60px;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 15vh auto;
+            border: 4px solid white;
+            width: calc(100% - 40px);
+            height: 550px;
+            border-radius: 20px;
+            margin-bottom: 80px;
+        }
+        .box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            height: 50px;
+            background-color: #FFFFFF;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .box .text-center {
+            position: absolute;
+            margin-left: 20px;
+        }
+        .box img {
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            border-top-right-radius: 10px;
+            object-fit: cover;
+            margin-right: auto;
+            margin-left: 5px;
+        }
+        .contacts-box {
+            width: 150px;
+            margin-top: 25px;
+            height: 35px;
+            margin-bottom: 65px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+            text-align: center;      
+        } 
+        footer a {
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .foot {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 2px solid black;
+            border-radius: 100px;
+            margin-bottom: 15px;
+        }
+        .oswald-font {
+            background-color: white;
+            font-family: "Oswald", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .text-center {
+            background-color: white;
+            font-family: "Oswald", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+        /* CSS for the modal */
+        .modal {
+            display: none; /* Hide the modal by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+
+        /* CSS for the modal content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Adjust width as needed */
+            max-width: 400px; /* Set maximum width */
+            border-radius: 10px;
+        }
+
+        /* CSS for the close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>    
+    <div class="container">
+        <div class="box contacts-box">
+            <h4 style="margin: 0;" class="oswald-font">CONTACTS</h4>
+        </div>
+        <div class="box" onclick="openLink('https://www.t.me/jbrtttttt')">
+            <img src="images/tg.jpg" alt="Telegram">
+            <div class="text-center">telegram</div>
+        </div>
+        <div class="box" onclick="openLink('https://www.facebook.com/job.nbrs?mibextid=rS40aB7S9Ucbxw6v')">
+            <img src="images/fb.jpg" alt="Facebook">
+            <div class="text-center">facebook</div>
+        </div>
+        <div class="box" onclick="openLink('https://www.instagram.com/jbrtttttt?igsh=OHBmNmQwc2NreTh2')">
+            <img src="images/ig.jpg" alt="Instagram">
+            <div class="text-center">instagram</div>
+        </div>
+        <div class="box" onclick="openLink('https://www.tiktok.com/@jbrtttttt?_r=1&_d=diha16dd6i976i&sec_uid=MS4wLjABAAAAvooiw1Z9LbCMQovtkAEOh7ETy6fHqAsHiDS6evlfeOJQ8fqPaOjUrwD_WZlxFe-C&share_author_id=6908918187476288514&sharer_language=en&source=h5_t&u_code=dg626c9h1k94kb&timestamp=1709985341&user_id=6908918187476288514&sec_user_id=MS4wLjABAAAAvooiw1Z9LbCMQovtkAEOh7ETy6fHqAsHiDS6evlfeOJQ8fqPaOjUrwD_WZlxFe-C&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7335676120371136261&share_link_id=beedd4d4-c9b9-4741-a283-272e40840dbd&share_app_id=1180&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb0229&social_share_type=5&enable_checksum=1')">
+            <img src="images/tiktok.jpg" alt="TikTok">
+            <div class="text-center">tiktok</div>
+        </div>        
+        <!-- HTML code for the Gmail box -->
+        <div class="box" onclick="openModal('gmailModal')">
+            <img src="images/gmail.jpg" alt="Gmail">
+            <div class="text-center">gmail</div>
+        </div>
+
+        <!-- Modal for Gmail -->
+        <div id="gmailModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('gmailModal')">&times;</span>
+                <h4>Send us a message through email:</h4>
+                <p>jobertniebres@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: auto; display: flex; justify-content: space-evenly;">
+        <a href="index.html" style="margin-left: 10px;"><img src="images/home.png" alt="Home" style="height: 60px;" class="foot"></a>
+        <a href="product.html"><img src="images/products.png" alt="Products" style="height: 60px;" class="foot"></a>
+        <a href="cart.html"><img src="images/cart.png" alt="Cart" style="height: 60px; width: auto;" class="foot"></a>
+        <a href="contact.html" style="margin-right: 10px;"><img src="images/contacts.png" alt="Contacts" style="height: 60px;" class="foot"></a>
+    </footer>
+
+    <!-- JavaScript for handling modal -->
+    <script>
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
