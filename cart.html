@@ -300,6 +300,12 @@
             <p id="gcashTotalPrice" class="total-price"></p>
             <p>Scan the QR code below to proceed with the payment:</p>
             <img src="images/qr.jpg" alt="Gcash QR Code">
+          <a href="product.html">
+             <button>Change Order</button>
+          </a>
+          <a href="index.html">
+             <button>Done</button>
+          </a>
         </div>
     </div>
 </div>
@@ -314,7 +320,12 @@
         <ul id="orderItemsList"></ul>
         <p>Kindly present this and hand in your payment to the cashier. Thank you!</p>
         <!-- Add download button for image -->
-        <button onclick="downloadOrderAsImage()">Download as Image</button>
+      <a href="product.html">
+             <button>Change Order</button>
+      </a>
+      <a href="index.html">
+        <button>Done</button>
+      </a>
     </div>
 </div>
   
@@ -331,6 +342,9 @@
     // Get the payment modal
     var paymentModal = document.getElementById("paymentModal");
 
+    // Get the order modal
+    var orderModal = document.getElementById("orderModal");
+
     // Function to show the payment modal
     function showPaymentModal() {
         paymentModal.style.display = "block";
@@ -342,19 +356,18 @@
     }
 
     // Function to show the Gcash container
-   function showGcashContainer() {
-    var gcashContainer = document.getElementById("gcashContainer");
-    gcashContainer.style.display = "block";   
-    // Update total price in Gcash modal
-    var totalPrice = calculateTotalPrice(); // You need to implement this function to calculate the total price
-    var gcashTotalPriceElement = document.getElementById("gcashTotalPrice");
-    gcashTotalPriceElement.textContent = 'Total Price: ₱' + totalPrice.toFixed(2);
-}
+    function showGcashContainer() {
+        var gcashContainer = document.getElementById("gcashContainer");
+        gcashContainer.style.display = "block";
+        // Update total price in Gcash modal
+        var totalPrice = calculateTotalPrice(); // You need to implement this function to calculate the total price
+        var gcashTotalPriceElement = document.getElementById("gcashTotalPrice");
+        gcashTotalPriceElement.textContent = 'Total Price: ₱' + totalPrice.toFixed(2);
+    }
 
     // Function to show the order modal
     function showOrderModal(paymentMethod) {
         hidePaymentModal();
-        var orderModal = document.getElementById("orderModal");
         orderModal.style.display = "block";
 
         // Clear previous order items
@@ -385,12 +398,32 @@
 
         // Display total price
         document.getElementById("total-price-order").textContent = 'Total Price: ₱' + totalPrice.toFixed(2);
+
+        // Add event listener to the "Done" button inside the order modal
+        var doneButton = document.getElementById("doneButton");
+        doneButton.addEventListener("click", goToRatePage);
     }
 
     // Function to hide the order modal
     function hideOrderModal() {
-        var orderModal = document.getElementById("orderModal");
         orderModal.style.display = "none";
+    }
+
+    // Function to navigate to the rate.html page after clicking "Done"
+    function goToRatePage() {
+        // Get the list of checked out items
+        var checkoutItems = document.querySelectorAll("#orderItemsList li");
+
+        // Store the checked out items in local storage to access them on the rate.html page
+        var itemsToRate = [];
+        checkoutItems.forEach(function(item) {
+            var itemName = item.querySelector("p").textContent;
+            itemsToRate.push(itemName);
+        });
+        localStorage.setItem("itemsToRate", JSON.stringify(itemsToRate));
+
+        // Redirect to the rate.html page
+        window.location.href = "rate.html";
     }
 
     // Call showOrderModal when the page loads

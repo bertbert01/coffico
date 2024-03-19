@@ -118,6 +118,44 @@
   .color {
     color: #412F26;
   }
+  .ratings {
+    margin-bottom: -15px;
+  }
+  .custom-swal-popup {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-swal-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.custom-swal-content {
+    display: flex; 
+    margin: 0;
+}
+
+.custom-swal-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.custom-swal-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.custom-swal-price {
+    font-size: 16px;
+    color: #666;
+    text-align: left;
+}
+
     </style>
 </head>
 <body style="background-color: #806044;">
@@ -138,42 +176,60 @@
         <div class="product-container">
             <img src="images/mocha.jpg" alt="Espresso 1" width="150" height="200">
             <p class="oswald-font">Mocha</p>
-            <p>₱275</p>
+            <p>₱99</p>
+            <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.8/5 | 26 Sold</span>
+            </div>
         </div>
     </div>
     <div class="product" data-toggle="modal" data-target="#productModal2">
         <div class="product-container">
             <img src="images/ristretto.jpg" alt="Espresso 2" width="150" height="200">
             <p class="oswald-font">Ristretto</p>
-            <p>₱275</p>
+            <p>₱99</p>
+            <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.9/5 | 48 Sold</span>
+            </div>
         </div>
     </div>
    <div class="product" data-toggle="modal" data-target="#productModal3">
             <div class="product-container">
                 <img src="images/espresso.jpg" alt="Espresso 3" width="150" height="200">
                 <p class="oswald-font">Cortado</p>
-                <p>₱275</p>
+                <p>₱99</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.6/5 | 7 Sold</span>
+                </div>
             </div>
         </div>
         <div class="product" data-toggle="modal" data-target="#productModal4">
             <div class="product-container">
                 <img src="images/red.jpg" alt="Espresso 4" width="150" height="200">
                 <p class="oswald-font">Red Eye</p>
-                <p>₱275</p>           
+                <p>₱99</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.8/5 | 32 Sold</span>
+                </div>
             </div>
         </div>
         <div class="product" data-toggle="modal" data-target="#productModal5">
             <div class="product-container">
                 <img src="images/affogato.jpg" alt="Espresso 3" width="150" height="200">
                 <p class="oswald-font">Affogato</p>
-                <p>₱275</p>
+                <p>₱99</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.9/5 | 49 Sold</span>
+                </div>
             </div>
         </div>
         <div class="product" data-toggle="modal" data-target="#productModal6">
             <div class="product-container">
                 <img src="images/iced.jpg" alt="Espresso 3" width="150" height="200">
                 <p class="oswald-font">Iced Cappuccino</p>
-                <p>₱275</p>
+                <p>₱99</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.8/5 | 40 Sold</span>
+                </div>
             </div>
         </div>
       
@@ -189,12 +245,12 @@
                 <div class="modal-body">
                     <img src="images/mocha.jpg" alt="Espresso 1" width="150" height="200">
                     <p class="oswald-font">Mocha</p>
-                    <p class="price">₱275</p>
+                    <p class="price">₱99</p>
                   
                     <p class="des">
                       Indulge in the perfect blend of rich espresso and creamy chocolate with our irresistible mocha. Satisfy your cravings and elevate your day with every sip of our decadent, handcrafted creation.
                     </p>
-                    <button onclick="addToCart('Mocha', 275, 'images/mocha.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Mocha', 99, 'images/mocha.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -211,11 +267,11 @@
                 <div class="modal-body">
                     <img src="images/ristretto.jpg" alt="Espresso 2" width="150" height="200">
                     <p class="oswald-font">Ristretto</p>
-                    <p class="price">₱275</p>
+                    <p class="price">₱99</p>
                     <p class="des">
                      Experience the intense and bold flavor of our ristretto, crafted with precision to deliver a concentrated burst of espresso goodness. Treat yourself to a short but powerful coffee experience that will awaken your senses and leave you craving for more. 
                     </p>
-                    <button onclick="addToCart('Ristretto', 275, 'images/ristretto.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Ristretto', 99, 'images/ristretto.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -232,11 +288,11 @@
                 <div class="modal-body">
                     <img src="images/caramel.jpg" alt="Espresso 1" width="150" height="200">
                     <p class="oswald-font">Caramel Latte</p>
-                    <p class="price">₱275</p>
+                    <p class="price">₱99</p>
                   <p class="des">
                     Savor the smooth harmony of espresso and velvety milk infused with the sweet indulgence of caramel in our signature caramel latte. Delight your taste buds with every sip of this luxurious blend, perfect for moments of indulgence and relaxation.
                   </p>
-                    <button onclick="addToCart('Caramel Latte', 275, 'images/cara.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Caramel Latte', 99, 'images/cara.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -253,11 +309,11 @@
                 <div class="modal-body">
                     <img src="images/red.jpg" alt="Espresso 4" width="150" height="200">
                     <p class="oswald-font">Red Eye</p>
-                    <p class="price">₱275</p> 
+                    <p class="price">₱99</p> 
                   <p class="des">
                     Energize your day with our invigorating Red Eye coffee—a bold and robust brew combined with a shot of espresso for an extra kick. Whether you need a morning pick-me-up or a midday boost, our Red Eye will keep you fueled and focused, ready to conquer whatever lies ahead.
                   </p>
-                    <button onclick="addToCart('Red Eye', 275, 'images/red.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Red Eye', 99, 'images/red.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -274,11 +330,11 @@
                 <div class="modal-body">
                     <img src="images/affogato.jpg" alt="Espresso 3" width="150" height="200">
                     <p class="oswald-font">Affogato</p>
-                    <p class="price">₱275</p>
+                    <p class="price">₱99</p>
                   <p class="des"> 
                     Treat yourself to the ultimate indulgence with our exquisite affogato—a delightful fusion of rich espresso poured over a scoop of creamy vanilla gelato. Experience the perfect marriage of hot and cold, bitter and sweet, in every spoonful of this decadent Italian dessert.
                   </p>                  
-                    <button onclick="addToCart('Affogato', 275, 'images/affogato.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Affogato', 99, 'images/affogato.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -295,11 +351,11 @@
                 <div class="modal-body">
                     <img src="images/moch.jpg" alt="Espresso 3" width="150" height="200">
                     <p class="oswald-font">Mocha Latte</p>
-                    <p class="price">₱275</p> 
+                    <p class="price">₱99</p> 
                   <p class="des">
                     Experience the best of both worlds with our tantalizing mocha latte—a harmonious blend of bold espresso, velvety milk, and rich chocolate. Indulge in the perfect balance of sweetness and depth, crafted to delight your senses and elevate your coffee experience.
                   </p>
-                    <button onclick="addToCart('Iced Cappuccino', 275, 'images/iced.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Iced Cappuccino', 99, 'images/iced.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -311,6 +367,7 @@
         <a href="cart.html"><img src="images/cart.png" alt="Cart" style="height: 60px; width: auto;" class="foot"></a>
         <a href="contact.html" style="margin-right: 10px;"><img src="images/contacts.png" alt="Contacts" style="height: 60px;" class="foot"></a>
     </footer>
+
   <script>
     function addToCart(name, price, imageUrl) {
         const item = {
@@ -323,10 +380,29 @@
         cartItems.push(item);
         localStorage.setItem('cart', JSON.stringify(cartItems));
 
-        alert('Item added to cart!');
+        // Show SweetAlert notification with custom style
+        Swal.fire({
+            icon: 'success',
+            title: 'Coffee added to cart!',
+            showConfirmButton: false,
+            timer: 1500,
+            customClass: {
+                popup: 'custom-swal-popup',
+                title: 'custom-swal-title'
+            },
+            html: `<div class="custom-swal-content">
+                        <img src="${imageUrl}" class="custom-swal-image">
+                        <div>
+                            <p class="custom-swal-name">${name}</p>
+                            <p class="custom-swal-price">₱${price}</p>
+                        </div>
+                    </div>`
+        });
     }
 </script>
-  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

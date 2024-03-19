@@ -111,6 +111,43 @@
   .color {
     color: #412F26;
   }
+  .ratings {
+    margin-bottom: -15px;
+  }
+  .custom-swal-popup {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-swal-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.custom-swal-content {
+    display: flex; 
+    margin: 0;
+}
+
+.custom-swal-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.custom-swal-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.custom-swal-price {
+    font-size: 16px;
+    color: #666;
+    text-align: left;
+}
     </style>
 </head>
 <body style="background-color: #806044;">
@@ -131,42 +168,60 @@
             <div class="product-container">
                 <img src="images/caramel.jpg" alt="Espresso 1" width="150" height="200">
                 <p class="oswald-font">Caramel Latte</p>
-                <p>₱275</p>
+                <p>₱105</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.7/5 | 9 Sold</span>
+                </div>
             </div>
         </div>
         <div class="product" data-toggle="modal" data-target="#productModal14">
             <div class="product-container">
                 <img src="images/pumpkin.jpg" alt="Espresso 2" width="150" height="200">
                 <p class="oswald-font">Pumpkin Spice Latte</p>
-                <p>₱275</p>
+                <p>₱105</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.7/5 | 7 Sold</span>
+                </div>
             </div>
         </div>
         <div class="product" data-toggle="modal" data-target="#productModal15">
             <div class="product-container">
                 <img src="images/cinnamon.jpg" alt="Espresso 3" width="150" height="200">
                 <p class="oswald-font">Cinnamon Latte</p>
-                <p>₱275</p>
+                <p>₱105</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.9/5 | 17 Sold</span>
+                </div>
             </div>
         </div>
         <div class="product" data-toggle="modal" data-target="#productModal16">
             <div class="product-container">
                 <img src="images/moch.jpg" alt="Espresso 3" width="150" height="200">
                 <p class="oswald-font">Mocha Latte</p>
-                <p>₱275</p>
+                <p>₱105</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">5/5 | 46 Sold</span>
+                </div>
             </div>
         </div>
         <div class="product" data-toggle="modal" data-target="#productModal17">
             <div class="product-container">
                 <img src="images/hazelnut.jpg" alt="Espresso 3" width="150" height="200">
                 <p class="oswald-font">Hazelnut Latte</p>
-                <p>₱275</p>
+                <p>₱105</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">5/5 | 15 Sold</span>
+                </div>
             </div>
         </div>
         <div class="product" data-toggle="modal" data-target="#productModal18">
             <div class="product-container">
                 <img src="images/vanilla.jpg" alt="Espresso 3" width="150" height="200">
                 <p class="oswald-font">Vanilla Latte</p>
-                <p>₱275</p>
+                <p>₱105</p>
+                <div class="ratings">
+                   <span style="font-size: 20px; color: gold;">&#9733;</span> <span style="font-size: 16px; margin-left: -3px;">4.5/5 | 10 Sold</span>
+                </div>
             </div>
         </div>
     
@@ -183,11 +238,11 @@
                 <div class="modal-body">
                     <img src="images/caramel.jpg" alt="Espresso 1" width="150" height="200">
                     <p class="oswald-font">Caramel Latte</p>
-                    <p class="price">₱275</p> 
+                    <p class="price">₱105</p> 
                   <p class="des">
                     Indulge in the irresistible sweetness of our caramel latte—a decadent blend of rich espresso, creamy milk, and velvety caramel syrup, perfectly crafted to satisfy your sweet cravings and elevate your coffee experience. Treat yourself to a moment of pure indulgence with every luxurious sip of this delightful beverage.
                   </p>
-                    <button onclick="addToCart('Caramel Latte', 275, 'images/caramel.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Caramel Latte', 105, 'images/caramel.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -204,11 +259,11 @@
                 <div class="modal-body">
                     <img src="images/pumpkin.jpg" alt="Espresso 2" width="150" height="200">
                     <p class="oswald-font">Pumpkin Spice Latte</p>
-                    <p class="price">₱275</p> 
+                    <p class="price">₱105</p> 
                    <p class="des">
                     Savor the cozy flavors of fall with our pumpkin spice latte—a delicious blend of espresso, steamed milk, and aromatic pumpkin spice syrup, topped with a swirl of whipped cream and a sprinkle of cinnamon. Experience the perfect balance of warmth and sweetness in every sip of this seasonal favorite, crafted to delight your senses and brighten your day.
                   </p>
-                    <button onclick="addToCart('Pumpkin Spice Latte', 275, 'images/pumpkin.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Pumpkin Spice Latte', 105, 'images/pumpkin.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -225,11 +280,11 @@
                 <div class="modal-body">
                     <img src="images/cinnamon.jpg" alt="Espresso 3" width="150" height="200">
                     <p class="oswald-font">Cinnamon Latte</p>
-                    <p class="price">₱275</p> 
+                    <p class="price">₱105</p> 
                   <p class="des">
                     Warm up your day with our comforting cinnamon latte—a delightful blend of bold espresso, creamy milk, and a touch of aromatic cinnamon syrup. Experience the cozy embrace of this sweet and spicy combination, perfect for adding a touch of warmth and indulgence to your coffee break.
                   </p>
-                    <button onclick="addToCart('Cinnamon Latte', 275, 'images/cinnamon.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Cinnamon Latte', 105, 'images/cinnamon.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -246,11 +301,11 @@
                 <div class="modal-body">
                     <img src="images/moch.jpg" alt="Espresso 3" width="150" height="200">
                     <p class="oswald-font">Mocha Latte</p>
-                    <p class="price">₱275</p>
+                    <p class="price">₱105</p>
                   <p class="des">
                     Indulge in the luxurious harmony of rich espresso, creamy milk, and decadent chocolate with our irresistible mocha latte. Satisfy your sweet cravings and elevate your coffee experience with every velvety sip of this deliciously indulgent beverage.
                   </p>
-                    <button onclick="addToCart('Mocha Latte', 275, 'images/moch.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Mocha Latte', 105, 'images/moch.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -267,11 +322,11 @@
                 <div class="modal-body">
                     <img src="images/hazelnut.jpg" alt="Espresso 3" width="150" height="200">
                     <p class="oswald-font">Hazelnut Latte</p>
-                    <p class="price">₱275</p> 
+                    <p class="price">₱105</p> 
                   <p class="des">
                     Savor the delightful fusion of bold espresso, creamy milk, and nutty hazelnut syrup in our irresistible hazelnut latte. Experience the perfect balance of richness and sweetness, crafted to indulge your senses and elevate your coffee ritual to new heights.
                   </p>
-                    <button onclick="addToCart('Hazelnut Latte', 275, 'images/hazelnut.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Hazelnut Latte', 105, 'images/hazelnut.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -288,11 +343,11 @@
                 <div class="modal-body">
                     <img src="images/vanilla.jpg" alt="Espresso 3" width="150" height="200">
                     <p class="oswald-font">Vanilla Latte</p>
-                    <p class="price">₱275</p>
+                    <p class="price">₱105</p>
                   <p class="des">
                     Experience the creamy indulgence of our vanilla latte—a harmonious blend of bold espresso, silky milk, and fragrant vanilla syrup. Satisfy your sweet cravings and delight your senses with every luxurious sip of this classic favorite.
                   </p>
-                    <button onclick="addToCart('Vanilla Latte', 275, 'images/vanilla.jpg')">Add to Cart</button>
+                    <button onclick="addToCart('Vanilla Latte', 105, 'images/vanilla.jpg')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -305,7 +360,7 @@
         <a href="contact.html" style="margin-right: 10px;"><img src="images/contacts.png" alt="Contacts" style="height: 60px;" class="foot"></a>
     </footer>
   
-  <script>
+<script>
     function addToCart(name, price, imageUrl) {
         const item = {
             name: name,
@@ -317,10 +372,29 @@
         cartItems.push(item);
         localStorage.setItem('cart', JSON.stringify(cartItems));
 
-        alert('Item added to cart!');
+        // Show SweetAlert notification with custom style
+        Swal.fire({
+            icon: 'success',
+            title: 'Coffee added to cart!',
+            showConfirmButton: false,
+            timer: 1500,
+            customClass: {
+                popup: 'custom-swal-popup',
+                title: 'custom-swal-title'
+            },
+            html: `<div class="custom-swal-content">
+                        <img src="${imageUrl}" class="custom-swal-image">
+                        <div>
+                            <p class="custom-swal-name">${name}</p>
+                            <p class="custom-swal-price">₱${price}</p>
+                        </div>
+                    </div>`
+        });
     }
 </script>
-  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
