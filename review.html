@@ -26,7 +26,7 @@
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 90px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
@@ -90,12 +90,12 @@
             position: absolute;
         }
         .total-rating {
-            font-size: 24px;
+            font-size: 21px;
             margin-top: auto; /* Pushes the total rating section to the bottom */
             padding: 0 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            align-self: flex-start; /* Aligns the total rating section to the left */
+            align-self: left; /* Aligns the total rating section to the left */
             white-space: nowrap; /* Prevents text from wrapping */
         }
         .total-rating .star {
@@ -108,11 +108,32 @@
             overflow-y: auto;
             margin-bottom: 20px; /* Adjusts the bottom margin */
         }
+        footer {           
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+           
+        }
+        footer a {          
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .foot {  
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 2px solid black;      
+            border-radius: 100px;
+            margin-bottom: 15px;
+            height: 40px; /* Set the same height as the footer images */
+            width: auto; /* Allow width to adjust based on height */
+        }
+  
     </style>
 </head>
 <body>
     <header>
-        <h2>B&J’s Cafe’s Reviews</h2>
+        <h2>B&J’s Cafe Reviews</h2>
     </header>
     <div class="container">
         <div class="review-form">
@@ -139,6 +160,13 @@
             <span class="star">&#9733;</span>
         </div>
     </div>
+  
+   <footer style="margin-top: auto; display: flex; justify-content: space-evenly;">
+        <a href="index.html" style="margin-left: 10px;"><img src="images/home.png" alt="Home" style="height: 60px;" class="foot"></a>
+        <a href="product.html"><img src="images/products.png" alt="Products" style="height: 60px;" class="foot"></a>
+        <a href="cart.html"><img src="images/cart.png" alt="Cart" style="height: 60px; width: auto;" class="foot"></a>
+        <a href="contact.html" style="margin-right: 10px;"><img src="images/contacts.png" alt="Contacts" style="height: 60px;" class="foot"></a>
+    </footer>
     
     <script>
         // Load existing reviews from local storage
@@ -199,17 +227,19 @@
         }
 
         // Function to update total star rating
-        function updateTotalRating(reviews) {
-            var totalRating = calculateTotalRating(reviews);
-            var totalRatingElement = document.getElementById("totalRating");
-            totalRatingElement.innerHTML = "Total Star Rating: ";
-            for (var i = 0; i < Math.floor(totalRating); i++) {
-                totalRatingElement.innerHTML += "<span class='star'>&#9733;</span>";
-            }
-            if (totalRating % 1 !== 0) {
-                totalRatingElement.innerHTML += "<span class='star' style='clip-path: inset(0 50% 0 0);'>&#9733;</span>";
-            }
-        }
+    function updateTotalRating(reviews) {
+    var totalRating = calculateTotalRating(reviews);
+    var totalRatingElement = document.getElementById("totalRating");
+    totalRatingElement.innerHTML = "Total Star Rating: ";
+    for (var i = 0; i < Math.floor(totalRating); i++) {
+        totalRatingElement.innerHTML += "<span class='star'>&#9733;</span>";
+    }
+    if (totalRating % 1 !== 0) {
+        totalRatingElement.innerHTML += "<span class='star' style='clip-path: inset(0 50% 0 0);'>&#9733;</span>";
+    }
+    // Append the total rating value next to the stars
+    totalRatingElement.innerHTML += " " + totalRating.toFixed(1) + " / 5";
+}
 
         // Function to calculate total star rating
         function calculateTotalRating(reviews) {
