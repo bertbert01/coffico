@@ -303,7 +303,7 @@
           <a href="product.html">
              <button>Change Order</button>
           </a>
-          <a href="index.html">
+          <a href="review.html">
              <button>Done</button>
           </a>
         </div>
@@ -323,7 +323,7 @@
       <a href="product.html">
              <button>Change Order</button>
       </a>
-      <a href="index.html">
+      <a href="review.html">
         <button>Done</button>
       </a>
     </div>
@@ -365,66 +365,65 @@
         gcashTotalPriceElement.textContent = 'Total Price: ₱' + totalPrice.toFixed(2);
     }
 
-    // Function to show the order modal
-    function showOrderModal(paymentMethod) {
-        hidePaymentModal();
-        orderModal.style.display = "block";
+    // Function to move items to the review page
+function moveToReview() {
+    // Get all the items from the cart
+    var cartItems = document.querySelectorAll(".item-container");
 
-        // Clear previous order items
-        document.getElementById("orderItemsList").innerHTML = "";
+    // Store items to review in local storage
+    var itemsToReview = [];
+    cartItems.forEach(function(item) {
+        var itemName = item.querySelector(".item-name").innerText;
+        itemsToReview.push(itemName);
+    });
+    localStorage.setItem("itemsToReview", JSON.stringify(itemsToReview));
 
-        // Get all the items from the cart
-        var cartItems = document.querySelectorAll(".item-container");
+    // Redirect to review page
+    window.location.href = "review.html";
+}
 
-        var totalPrice = 0;
+// Function to show the order modal
+function showOrderModal(paymentMethod) {
+    hidePaymentModal();
+    orderModal.style.display = "block";
 
-        // Loop through each item and extract image, name, and quantity
-        cartItems.forEach(function(item) {
-            var itemName = item.querySelector(".item-name").innerText;
-            var itemImage = item.querySelector(".item-image").outerHTML;
-            var itemPrice = parseFloat(item.querySelector(".item-price").innerText.replace('₱', ''));
-            var quantity = parseInt(item.querySelector(".quantity-input").value);
+    // Clear previous order items
+    document.getElementById("orderItemsList").innerHTML = "";
 
-            // Create list item element to display image, name, and quantity
-            var listItem = document.createElement("li");
-            listItem.innerHTML = itemImage + "<p>" + itemName + " (Quantity: " + quantity + ")</p>";
+    // Get all the items from the cart
+    var cartItems = document.querySelectorAll(".item-container");
 
-            // Append the list item to the order items list
-            document.getElementById("orderItemsList").appendChild(listItem);
+    var totalPrice = 0;
 
-            // Calculate total price including quantity
-            totalPrice += itemPrice * quantity;
-        });
+    // Loop through each item and extract image, name, and quantity
+    cartItems.forEach(function(item) {
+        var itemName = item.querySelector(".item-name").innerText;
+        var itemImage = item.querySelector(".item-image").outerHTML;
+        var itemPrice = parseFloat(item.querySelector(".item-price").innerText.replace('₱', ''));
+        var quantity = parseInt(item.querySelector(".quantity-input").value);
 
-        // Display total price
-        document.getElementById("total-price-order").textContent = 'Total Price: ₱' + totalPrice.toFixed(2);
+        // Create list item element to display image, name, and quantity
+        var listItem = document.createElement("li");
+        listItem.innerHTML = itemImage + "<p>" + itemName + " (Quantity: " + quantity + ")</p>";
 
-        // Add event listener to the "Done" button inside the order modal
-        var doneButton = document.getElementById("doneButton");
-        doneButton.addEventListener("click", goToRatePage);
-    }
+        // Append the list item to the order items list
+        document.getElementById("orderItemsList").appendChild(listItem);
 
-    // Function to hide the order modal
-    function hideOrderModal() {
-        orderModal.style.display = "none";
-    }
+        // Calculate total price including quantity
+        totalPrice += itemPrice * quantity;
+    });
 
-    // Function to navigate to the rate.html page after clicking "Done"
-    function goToRatePage() {
-        // Get the list of checked out items
-        var checkoutItems = document.querySelectorAll("#orderItemsList li");
+    // Display total price
+    document.getElementById("total-price-order").textContent = 'Total Price: ₱' + totalPrice.toFixed(2);
 
-        // Store the checked out items in local storage to access them on the rate.html page
-        var itemsToRate = [];
-        checkoutItems.forEach(function(item) {
-            var itemName = item.querySelector("p").textContent;
-            itemsToRate.push(itemName);
-        });
-        localStorage.setItem("itemsToRate", JSON.stringify(itemsToRate));
+    // Add event listener to the "Done" button inside the order modal
+    var doneButton = document.getElementById("doneButton");
+    doneButton.addEventListener("click", function() {
+        // Call moveToReview function to move items to the review page
+        moveToReview();
+    });
+}
 
-        // Redirect to the rate.html page
-        window.location.href = "rate.html";
-    }
 
     // Call showOrderModal when the page loads
     window.onload = function() {

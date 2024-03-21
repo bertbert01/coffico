@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Aesthetic Reviews</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f0e7;
+            color: #383838;
+        }
+        header {
+          
+            background-color: #2d241a;
+            color: #f3f0e7;
+            padding: 20px;
+            text-align: center;
+            
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .review {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+        .review:last-child {
+            border-bottom: none;
+        }
+        .review p {
+            margin: 0;
+        }
+        .review-form {
+            margin-top: 20px;
+        }
+        .review-form textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+        .review-form select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .review-form button {
+            padding: 10px 20px;
+            background-color: #2d241a;
+            color: #f3f0e7;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .star-rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            font-size: 18px;
+        }
+        .star-rating span {
+            display: inline-block;
+            position: relative;
+            width: 1.1em;
+            color: #FFD700; /* Gold color */
+        }
+        .star-rating span:before {
+            content: "\2605";
+            position: absolute;
+        }
+        .star-rating span.rating:after {
+            content: "\2606";
+            position: absolute;
+        }
+        .total-rating {
+            font-size: 24px;
+            margin-top: auto; /* Pushes the total rating section to the bottom */
+            padding: 0 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-self: flex-start; /* Aligns the total rating section to the left */
+            white-space: nowrap; /* Prevents text from wrapping */
+        }
+        .total-rating .star {
+            color: #FFD700;
+            cursor: pointer;
+        }
+        #userReviews {
+            flex-grow: 1; /* Allows the user review section to grow */
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px; /* Adjusts the bottom margin */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>B&J’s Cafe’s Reviews</h2>
+    </header>
+    <div class="container">
+        <div class="review-form">
+            <h2>Leave a Review</h2>
+            <form id="reviewForm" action="#" method="post">
+                <textarea id="reviewText" name="review" placeholder="Write your review here..."></textarea>
+                <select id="rating" name="rating">
+                    <option value="5">⭐⭐⭐⭐⭐ (5 stars - Excellent)</option>
+                    <option value="4">⭐⭐⭐⭐ (4 stars - Very Good)</option>
+                    <option value="3">⭐⭐⭐ (3 stars - Good)</option>
+                    <option value="2">⭐⭐ (2 stars - Fair)</option>
+                    <option value="1">⭐ (1 star - Poor)</option>
+                </select>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+        <div id="userReviews"></div>
+        <div id="totalRating" class="total-rating">
+            Total Star Rating: 
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+        </div>
+    </div>
+    
+    <script>
+        // Load existing reviews from local storage
+        window.addEventListener('load', function() {
+           
+            var reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            displayReviews(reviews);
+        });
+
+        // Handle form submission
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var reviewText = document.getElementById("reviewText").value;
+            var rating = document.getElementById("rating").value;
+            
+            var review = {
+                text: reviewText,
+                rating: rating
+            };
+            
+            var reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            reviews.push(review);
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+            
+            displayReviews(reviews);
+
+            // Reset form fields
+            document.getElementById("reviewText").value = "";
+            document.getElementById("rating").selectedIndex = 0;
+        });
+
+        // Display reviews on the page
+        function displayReviews(reviews) {
+            var reviewContainer = document.getElementById("userReviews");
+            reviewContainer.innerHTML = "";
+
+            reviews.forEach(function(review) {
+                var reviewElement = document.createElement("div");
+                reviewElement.className = "review";
+                
+                var reviewContent = "<h4>User Review</h4>";
+                reviewContent += "<p>" + review.text + "</p>";
+                reviewContent += "<p>Rating: " + review.rating + " stars <span class='star-rating'>";
+                
+                // Display star ratings
+                for (var i = 0; i < parseInt(review.rating); i++) {
+                    reviewContent += "<span class='rating'></span>";
+                }
+                reviewContent += "</span></p>";
+                
+                reviewElement.innerHTML = reviewContent;
+                reviewContainer.appendChild(reviewElement);
+            });
+
+            // Calculate and display total star rating
+            updateTotalRating(reviews);
+        }
+
+        // Function to update total star rating
+        function updateTotalRating(reviews) {
+            var totalRating = calculateTotalRating(reviews);
+            var totalRatingElement = document.getElementById("totalRating");
+            totalRatingElement.innerHTML = "Total Star Rating: ";
+            for (var i = 0; i < Math.floor(totalRating); i++) {
+                totalRatingElement.innerHTML += "<span class='star'>&#9733;</span>";
+            }
+            if (totalRating % 1 !== 0) {
+                totalRatingElement.innerHTML += "<span class='star' style='clip-path: inset(0 50% 0 0);'>&#9733;</span>";
+            }
+        }
+
+        // Function to calculate total star rating
+        function calculateTotalRating(reviews) {
+            var totalStars = 0;
+            reviews.forEach(function(review) {
+                totalStars += parseInt(review.rating);
+            });
+            return totalStars / reviews.length;
+        }
+    </script>
+</body>
+</html>
